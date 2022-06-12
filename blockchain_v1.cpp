@@ -45,11 +45,7 @@ class Block {
             return sha256(to_string(number) + data + prevHash);
         }
 };
-/*class Transaction {
-    public:
-        int number, value;
-        string sender, receiver, sign;
-};*/
+
 class Blockchain {
     public:
         int lastBlock;
@@ -74,6 +70,7 @@ class Blockchain {
             return true;
         }
 };
+
 int main(int argc, char *argv[])
 {
     Blockchain myCoin;
