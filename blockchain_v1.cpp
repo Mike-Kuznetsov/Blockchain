@@ -33,37 +33,38 @@ class Block {
             prevHash=setPrevHash;
             number=setNumber;
             data=setData;
-            thisHash=getHash();
-            /*cout << "Block number: " << number << endl;
+            thisHash=hash();
+            cout << "Block number: " << number << endl;
             cout << "Previous Hash: " << prevHash << endl;
             cout << "Data: " << data << endl;
             cout << "Hash: " << thisHash << endl;
             cout << endl;
-            cout << endl;*/
+            cout << endl;
         }
-        string getHash(){
+        string hash(){
             return sha256(to_string(number) + data + prevHash);
         }
 };
-
+/*class Transaction {
+    public:
+        int number, value;
+        string sender, receiver, sign;
+};*/
 class Blockchain {
     public:
         int lastBlock;
         Block block[10000];
-  
         Blockchain(){
-            block[0].setContent(0,"Data: First Block","0");
+            block[0].setContent(0,"This is the first block","0");
             lastBlock=0;
         }
- 
         void newBlock(string data){
             lastBlock++;
             block[lastBlock].setContent(lastBlock,data,block[lastBlock-1].thisHash);
         }
-  
         bool check(){
             for (int i=1; i<=lastBlock; i++){
-                if (block[i].thisHash != block[i].getHash()){
+                if (block[i].thisHash != block[i].hash()){
                     return false;
                 }
                 else if (block[i].prevHash != block[i-1].thisHash){
@@ -73,15 +74,18 @@ class Blockchain {
             return true;
         }
 };
-
 int main(int argc, char *argv[])
 {
     Blockchain myCoin;
     myCoin.newBlock("ABCDEFG");
     myCoin.newBlock("XYZ");
+    //myCoin.block[1].data="KEK";
+    //myCoin.block[1].thisHash=myCoin.block[1].getHash();
+    //myCoin.block[2].prevHash=myCoin.block[1].thisHash;
+    //myCoin.block[2].thisHash=myCoin.block[2].getHash();
     if (myCoin.check())
         cout << "Blockchain is valid" << endl;
     else
-        cout << "Blockchain is invalid" << endl;
+        cout << "Blockchain is corrupted" << endl;
     return 0;
 }
