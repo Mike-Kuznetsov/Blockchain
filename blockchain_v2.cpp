@@ -18,6 +18,7 @@
 *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+
 #include <iostream>
 #include "sha256.h"
 #include <thread>
