@@ -1,7 +1,7 @@
 /* 
 *   Blockchain for Mautoz Tech Youtube Video.
-*   Version 0.
-*   This program is simpliest implementation of blockchain technology.
+*   Version 0.1.
+*   This program is the simpliest implementation of blockchain technology.
 *
 *   Mautoz Tech - https://www.youtube.com/c/MautozTech
 *   Заметки ESPшника - https://www.youtube.com/channel/UCQAbEIaWFdARXKqcufV6y_g
