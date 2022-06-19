@@ -1,6 +1,6 @@
 /* 
 *   Blockchain for Mautoz Tech Youtube Video.
-*   Version 1. Added blockchain class to operate our blockchain.
+*   Version 1. Added blockchain class for operating blockchain.
 *   This program is simpliest implementation of blockchain technology.
 *
 *   Mautoz Tech - https://www.youtube.com/c/MautozTech
