@@ -1,6 +1,6 @@
 /* 
 *   Blockchain for Mautoz Tech Youtube Video.
-*   Version 3. Added proof of work and mining. Still no users and transactions.
+*   Version 0.3. Added proof of work and mining. Still no users and transactions.
 *   This program is simpliest implementation of blockchain technology.
 *
 *   Mautoz Tech - https://www.youtube.com/c/MautozTech
