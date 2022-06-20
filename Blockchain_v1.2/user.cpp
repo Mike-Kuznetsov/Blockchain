@@ -18,15 +18,9 @@ class User {
                 lastBlock++;
                 block[lastBlock]=receivedBlock;
             }
-            // ELSE Сравнение своего блокчейна с другими блокчейнами и бан майнера приславшего блок
+            // Note for the future: ELSE we'll compare it with different blockchains and if it's wrong miner we'll be banned.
 
         }
-        /*void User::setMiners(Miner miner1){
-            miner=miner1;
-        }*/
-        /*void User::addData(string newData){
-            block[lastBlock].addData(newData);
-        }*/
         bool check(){
             for (int i=1; i<lastBlock; i++){
                 if (block[i].hash != block[i].hashFunc()){
