@@ -7,7 +7,6 @@ using namespace std;
 class Miner {
     public:
         User *user = new User[4];
-        //User (&user)[4];
         std::string zeros;
         Block currentBlock;
 
