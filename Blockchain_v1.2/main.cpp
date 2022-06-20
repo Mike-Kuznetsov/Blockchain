@@ -3,19 +3,11 @@
 #include <regex>
 using namespace std;
 
-/*class Transaction {
-    public:
-        int number, value;
-        string sender, receiver, sign;
-};*/
-
 int main(int argc, char *argv[])
 {
     User *user = new User[4];
     Miner *miner= new Miner[4];;
-    //cout << user << endl;
     miner[0].start(user);
-    //user1.setMiners(miner1);
     string input;
     cmatch result;
     int ID;
