@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1655633598 source:c:\users\win7\documents\codeblocks\blockchain\block.cpp
+	<iostream>
+	"sha256.h"
+
+1654969752 c:\users\win7\documents\codeblocks\blockchain\sha256.h
+	<string>
+
+1654969746 source:c:\users\win7\documents\codeblocks\blockchain\sha256.cpp
+	<cstring>
+	<fstream>
+	"sha256.h"
+
+1655633581 source:c:\users\win7\documents\codeblocks\blockchain\user.cpp
+	<iostream>
+	"block.cpp"
+	<thread>
+
+1655633598 c:\users\win7\documents\codeblocks\blockchain\block.cpp
+	<iostream>
+	"sha256.h"
+
+1655748426 source:c:\users\win7\documents\codeblocks\blockchain\main.cpp
+	<iostream>
+	"miner.cpp"
+	<regex>
+
+1655657200 c:\users\win7\documents\codeblocks\blockchain\miner.cpp
+	<iostream>
+	"user.cpp"
+	<thread>
+
+1655633581 c:\users\win7\documents\codeblocks\blockchain\user.cpp
+	<iostream>
+	"block.cpp"
+	<thread>
+
+1655657200 source:c:\users\win7\documents\codeblocks\blockchain\miner.cpp
+	<iostream>
+	"user.cpp"
+	<thread>
+
