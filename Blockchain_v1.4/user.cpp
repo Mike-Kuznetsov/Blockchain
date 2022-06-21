@@ -1,9 +1,6 @@
 #include <iostream>
 #include "user.h"
 #include "block.h"
-//#include "main.cpp"
-//#include "miner.h"
-//#include <thread>
 
 using namespace std;
 
