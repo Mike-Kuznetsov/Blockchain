@@ -10,8 +10,6 @@ class User {
         Block block[10000];
         User();
         void setBlock(Block receivedBlock);
-        //void setMiners(Miner miner1);
-        //void addData(std::string newData);
         bool check();
         void showChain();
         void showData();
