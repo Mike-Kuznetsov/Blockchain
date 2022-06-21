@@ -22,7 +22,6 @@ using namespace std;
             for (int i=0; i<4; i++){
                 user[i].setBlock(currentBlock);
                 if (i!=minerID){
-                    //cout << "MINER ID - " << to_string(minerID) << " SENT TO: " << to_string(i) << " BLOCK NUM: " << currentBlock.number << endl;
                     miner[i].setBlock(currentBlock);
                 }
             }
@@ -31,8 +30,7 @@ using namespace std;
             currentBlock.addData(newData);
         }
         void Miner::setBlock(Block newReceivedBlock){
-            if ((newReceivedBlock.hashFunc()==newReceivedBlock.hash) && (newReceivedBlock.number==currentBlock.number) && (newReceivedBlock.prevHash==currentBlock.prevHash)){\
-                //cout << "BlockAvailable set to True" << endl;
+            if ((newReceivedBlock.hashFunc()==newReceivedBlock.hash) && (newReceivedBlock.number==currentBlock.number) && (newReceivedBlock.prevHash==currentBlock.prevHash)){
                 receivedBlock=newReceivedBlock;
                 blockAvailable=true;
             }
@@ -44,7 +42,6 @@ using namespace std;
                     currentBlock.nonce++;
                     if (blockAvailable){
                         currentBlock=receivedBlock;
-                        //cout << "MINER " << to_string(minerID) << "BLOCK AVAILABLE" << endl;
                     }
                 }
                 if (!blockAvailable){
@@ -59,6 +56,5 @@ using namespace std;
                 currentBlock.setContent(currentBlock.number+1, currentBlock.hash);
                 zeros="000000000000000000000000000000";
                 currentBlock.addData("MINER "+to_string(minerID)+" - ");
-                //cout << "MINER " << to_string(minerID) << endl;
             }
         }
