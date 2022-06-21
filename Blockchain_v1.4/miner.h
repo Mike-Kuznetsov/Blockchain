@@ -10,8 +10,8 @@ class Miner {
     public:
         Miner();
         int minerID;
-        User *user;// = new User[4];
-        Miner *miner;// = new Miner[4];
+        User *user;
+        Miner *miner;
         std::string zeros;
         Block currentBlock;
         Block receivedBlock;
