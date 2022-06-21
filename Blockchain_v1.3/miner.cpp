@@ -1,7 +1,6 @@
 #include <iostream>
 #include "miner.h"
 #include "block.h"
-//#include "main.cpp"
 #include "user.h"
 #include <thread>
 
@@ -13,7 +12,6 @@ using namespace std;
         }
         void Miner::start(User *user1){// Miner *miner1
             user=user1;
-            //miner=miner1;
             thread miner(mining, this, 5);
             miner.detach();
         }
@@ -21,9 +19,6 @@ using namespace std;
             for (int i=0; i<4; i++){
                 user[i].setBlock(currentBlock);
             }
-            /*for (int i=0; i<4; i++){
-                user[i].setBlock(currentBlock);
-            }*/
             currentBlock.setContent(currentBlock.number+1, currentBlock.hash);
             zeros="000000000000000000000000000000";
         }
