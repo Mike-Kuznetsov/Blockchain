@@ -16,15 +16,10 @@ using namespace std;
                 lastBlock++;
                 block[lastBlock]=receivedBlock;
             }
-            // ELSE Сравнение своего блокчейна с другими блокчейнами и бан майнера приславшего блок
-            // + Функция для получения всего блокчейна и его проверка
+            //  Note for the future: ELSE we'll compare it with different blockchains and if it's wrong miner we'll be banned.
+            // ELSE РЎСЂР°РІРЅРµРЅРёРµ СЃРІРѕРµРіРѕ Р±Р»РѕРєС‡РµР№РЅР° СЃ РґСЂСѓРіРёРјРё Р±Р»РѕРєС‡РµР№РЅР°РјРё Рё Р±Р°РЅ РјР°Р№РЅРµСЂР° РїСЂРёСЃР»Р°РІС€РµРіРѕ Р±Р»РѕРє
+            // + Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РІСЃРµРіРѕ Р±Р»РѕРєС‡РµР№РЅР° Рё РµРіРѕ РїСЂРѕРІРµСЂРєР°
         }
-        /*void User::setMiners(Miner miner1){
-            miner=miner1;
-        }*/
-        /*void User::addData(string newData){
-            block[lastBlock].addData(newData);
-        }*/
         bool User::check(){
             for (int i=1; i<lastBlock; i++){
                 if (block[i].hash != block[i].hashFunc()){
