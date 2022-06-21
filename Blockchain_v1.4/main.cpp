@@ -1,10 +1,10 @@
 /*
 *   Blockchain for Mautoz Tech Youtube Video.
-*   Version 1.3. Added header files
+*   Version 1.4. Now program creates 4 miners instead of only one.
 *   In this project i write simpliest cryptocurrency for my youtube channel.
 *
 *   Mautoz Tech - https://www.youtube.com/c/MautozTech
-*   Çàìåòêè ESPøíèêà - https://www.youtube.com/channel/UCQAbEIaWFdARXKqcufV6y_g
+*   Ğ—Ğ°Ğ¼ĞµÑ‚ĞºĞ¸ ESPÑˆĞ½Ğ¸ĞºĞ° - https://www.youtube.com/channel/UCQAbEIaWFdARXKqcufV6y_g
 *
 *    This program is free software: you can redistribute it and/or modify
 *  it under the terms of the GNU General Public License as published by
@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
             miner[0].addData(input);
             miner[1].addData(input);
             miner[2].addData(input);
-            //miner[3].addData(input);
+            miner[3].addData(input);
          }
     }
     return 0;
