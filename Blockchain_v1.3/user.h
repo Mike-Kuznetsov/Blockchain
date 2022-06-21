@@ -3,11 +3,9 @@
 
 #include <string>
 #include "block.h"
-//#include "miner.h"
 
 class User {
     public:
-        //Miner miner;
         int lastBlock;
         Block block[10000];
         User();
