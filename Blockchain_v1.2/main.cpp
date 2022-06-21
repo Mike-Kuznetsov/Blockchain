@@ -26,7 +26,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     User *user = new User[4];
-    Miner *miner= new Miner[4];;
+    Miner *miner= new Miner[4];
     miner[0].start(user);
     string input;
     cmatch result;
