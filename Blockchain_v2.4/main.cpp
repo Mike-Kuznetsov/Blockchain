@@ -1,12 +1,11 @@
 /*
 *   Blockchain for Mautoz Tech Youtube Video.
 *   In this project i write simpliest cryptocurrency for my youtube channel.
-*   Version 2.3. Now you can transfer crypto by command "add [FROM] [TO] [VALUE]". But transaction will have not be checked before adding to a blockchain.
-*   Added command "bal" to check balances.
+*   Version 2.4 Now users are checking signatures of transactions in blocks they have received.
 *   OpenSSL Library required.
 *
 *   Mautoz Tech - https://www.youtube.com/c/MautozTech
-*   Заметки ESPшника - https://www.youtube.com/channel/UCQAbEIaWFdARXKqcufV6y_g
+*   Г‡Г Г¬ГҐГІГЄГЁ ESPГёГ­ГЁГЄГ  - https://www.youtube.com/channel/UCQAbEIaWFdARXKqcufV6y_g
 *
 *    This program is free software: you can redistribute it and/or modify
 *  it under the terms of the GNU General Public License as published by
