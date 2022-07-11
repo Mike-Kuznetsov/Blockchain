@@ -1,11 +1,11 @@
 /*
 *   Blockchain for Mautoz Tech Youtube Video.
 *   In this project i write simpliest cryptocurrency for my youtube channel.
-*   Version 2.5 Refactored. Bugfixes.
+*   Version 2.6 Added balances checking
 *   OpenSSL Library required.
 *
 *   Mautoz Tech - https://www.youtube.com/c/MautozTech
-*   Заметки ESPшника - https://www.youtube.com/channel/UCQAbEIaWFdARXKqcufV6y_g
+*   Г‡Г Г¬ГҐГІГЄГЁ ESPГёГ­ГЁГЄГ  - https://www.youtube.com/channel/UCQAbEIaWFdARXKqcufV6y_g
 *
 *    This program is free software: you can redistribute it and/or modify
 *  it under the terms of the GNU General Public License as published by
