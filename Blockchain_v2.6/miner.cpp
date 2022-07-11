@@ -26,9 +26,6 @@ void Miner::start(User *user1, Miner *miner1, int ID){
     // First transaction in block is miner's reward
     currentBlock.setContent(1, "", balances, transactionCount);
     currentBlock.balances[minerID+4]++;
-    /*for (int i=0;i<8;i++){
-        cout << currentBlock.balances[i] << endl;
-    }*/
     Transaction transaction;
     string kek="SYSTEM";
     transaction.addData(0, kek, pubKey, 1);
