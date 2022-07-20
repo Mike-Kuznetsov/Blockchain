@@ -55,19 +55,17 @@ class Blockchain {
     public:
         int lastBlock;
         string data;
-        string zeros;
+        string zeros = "000000000000000000000000000000";;
         Block block[10000];
         Blockchain(){
             block[0].createBlock(0,"0");
             lastBlock=0;
-            zeros="000000000000000000000000000000";
             thread thr(mining, this, 5);
             thr.detach();
         }
         void newBlock(){
             lastBlock++;
             block[lastBlock].createBlock(lastBlock, block[lastBlock-1].hash);
-            zeros="000000000000000000000000000000";
 
         }
         void addData(string newData){
@@ -85,8 +83,8 @@ class Blockchain {
             return true;
         }
         void mining(int difficulty){
+            zeros=zeros.substr(0, difficulty);
             while(true){
-                zeros=zeros.substr(0, difficulty);
                 while (block[lastBlock].hashFunc().substr(0, difficulty)!=zeros){
                     block[lastBlock].nonce++;
                 }
