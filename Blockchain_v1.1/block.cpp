@@ -1,28 +1,21 @@
 #include <iostream>
 #include "sha256.h"
-
+#include "block.h"
 using namespace std;
 
-class Block {
-    public:
-    int number;
-    std::string hash;
-    std::string prevHash;
-    std::string data;
-    int nonce;
-    void setContent(int setNumber, string setPrevHash){
-        prevHash=setPrevHash;
-        number=setNumber;
-        nonce=0;
-        hash="";
-        data="";
-    }
+void Block::createBlock(int setNumber, string setPrevHash){
+    prevHash=setPrevHash;
+    number=setNumber;
+    nonce=0;
+    hash="";
+    data="";
+}
 
-    void addData(string newData){
-        data+=newData;
-    }
+void Block::addData(string newData){
+    data+=newData;
+    //cout << "Data: " << data << endl;
+}
 
-    string hashFunc(){
-        return sha256(to_string(number) + data + prevHash + to_string(nonce));
-    }
-};
+string Block::hashFunc(){
+    return sha256(to_string(number) + data + prevHash + to_string(nonce));
+}
