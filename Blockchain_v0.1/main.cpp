@@ -25,7 +25,7 @@ using namespace std;
 class Block {
     public:
         int number;
-        string thisHash;
+        string hash;
         string prevHash;
         string data;
 
@@ -33,11 +33,11 @@ class Block {
             prevHash=setPrevHash;
             number=setNumber;
             data=setData;
-            thisHash=sha256(to_string(number) + data + prevHash);
+            hash=sha256(to_string(number) + data + prevHash);
             cout << "Block number: " << number << endl;
             cout << "Previous Hash: " << prevHash << endl;
             cout << "Data: " << data << endl;
-            cout << "Hash: " << thisHash << endl;
+            cout << "Hash: " << hash << endl;
             cout << endl;
             cout << endl;
         }
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 {
     Block block[10];
     block[0].setContent(0,"ABCD","0");
-    block[1].setContent(1,"ABCDEFG",block[0].thisHash);
-    block[2].setContent(2,"XYZ",block[1].thisHash);
+    block[1].setContent(1,"ABCDEFG",block[0].hash);
+    block[2].setContent(2,"XYZ",block[1].hash);
     return 0;
 }
