@@ -56,7 +56,7 @@ class Blockchain {
         int lastBlock;
         string data;
         string zeros = "000000000000000000000000000000";
-        Block block[10000];
+        Block block[100];
         Blockchain(){
             block[0].createBlock(0,"0");
             lastBlock=0;
