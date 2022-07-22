@@ -1,45 +1,44 @@
 #include <iostream>
-#include "user.cpp"
+#include "miner.h"
+#include "block.h"
+#include "user.h"
 #include <thread>
 
 using namespace std;
 
-class Miner {
-    public:
-        User* user;
-        std::string zeros;
-        Block currentBlock;
+void Miner::start(User *setUser, mutex *setMtx, int setDifficulty){
+    mtx=setMtx;
+    user=setUser;
+    currentBlock.createBlock(0,"0");
+    currentBlock.hash=currentBlock.hashFunc();
+    currentBlock.createBlock(1,currentBlock.hash);
+    difficulty=setDifficulty;
+    zeros="000000000000000000000000000000";
+    zeros=zeros.substr(0, difficulty);
+    thread miner(mining, this);
+    miner.detach();
+}
+void Miner::sendBlock(){
+    (*user).setBlock(currentBlock);
+    currentBlock.createBlock(currentBlock.number+1, currentBlock.hash);
+}
+void Miner::addData(string newData){
+    (*mtx).lock();
+    currentBlock.addData(newData);
+    (*mtx).unlock();
+}
+void Miner::mining(){
+    while(true){
+        while (currentBlock.hashFunc().substr(0, difficulty)!=zeros){
+            currentBlock.nonce++;
+        }
+        //cout << "Block has been found" << endl;
+        //cout << "HASH: " << currentBlock.hash << endl;
+        (*mtx).lock();
+        currentBlock.hash=currentBlock.hashFunc();
+        sendBlock();
+        (*mtx).unlock();
+    }
+}
 
-        Miner(){
-            currentBlock.setContent(1,"");
-            zeros="000000000000000000000000000000";
-
-        }
-        void sendBlock(){
-            (*user).setBlock(currentBlock);
-            currentBlock.setContent(currentBlock.number+1, currentBlock.hash);
-            zeros="000000000000000000000000000000";
-        }
-        void start(User *user1){
-            user = user1;
-            thread miner(mining, this, 5);
-            miner.detach();
-        }
-        void addData(string newData){
-            currentBlock.addData(newData);
-        }
-        void mining(int difficulty){
-            while(true){
-                zeros=zeros.substr(0, difficulty);
-                while (currentBlock.hashFunc().substr(0, difficulty)!=zeros){
-                    currentBlock.nonce++;
-                    //cout << block.nonce << endl;
-                }
-                currentBlock.hash=currentBlock.hashFunc();
-                //cout << "Block has been found" << endl;
-                //cout << "HASH: " << currentBlock.hash << endl;
-                sendBlock();
-            }
-        }
-};
 
