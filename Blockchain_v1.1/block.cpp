@@ -13,7 +13,6 @@ void Block::createBlock(int setNumber, string setPrevHash){
 
 void Block::addData(string newData){
     data+=newData;
-    //cout << "Data: " << data << endl;
 }
 
 string Block::hashFunc(){
