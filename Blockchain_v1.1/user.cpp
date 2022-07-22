@@ -30,14 +30,14 @@ bool User::check(){
     return true;
 }
 void User::showChain(){
-    for (int i; i<=lastBlock; i++){
+    for (int i=0; i<=lastBlock; i++){
         cout << "Block: " << i << endl;
         cout <<  block[i].prevHash << endl;
         cout <<  block[i].hash << endl;
     }
 }
 void User::showData(){
-    for (int i; i<=lastBlock; i++){
+    for (int i=0; i<=lastBlock; i++){
         cout << "Block: " << i << endl;
         cout <<  block[i].data << endl;
     }
