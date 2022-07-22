@@ -25,22 +25,22 @@ using namespace std;
 class Block {
     public:
         int number;
-        string thisHash;
+        string hash;
         string prevHash;
         string data;
         setContent(int setNumber, string setData, string setPrevHash){
             prevHash=setPrevHash;
             number=setNumber;
             data=setData;
-            thisHash=hash();
+            hash=hashFunc();
             cout << "Block number: " << number << endl;
             cout << "Previous Hash: " << prevHash << endl;
             cout << "Data: " << data << endl;
-            cout << "Hash: " << thisHash << endl;
+            cout << "Hash: " << hash << endl;
             cout << endl;
             cout << endl;
         }
-        string hash(){
+        string hashFunc(){
             return sha256(to_string(number) + data + prevHash);
         }
 };
@@ -50,19 +50,19 @@ class Blockchain {
         int lastBlock;
         Block block[10000];
         Blockchain(){
-            block[0].setContent(0,"This is the first block","0");
+            block[0].setContent(0,"This is the first block", "0");
             lastBlock=0;
         }
         void newBlock(string data){
             lastBlock++;
-            block[lastBlock].setContent(lastBlock,data,block[lastBlock-1].thisHash);
+            block[lastBlock].setContent(lastBlock, data, block[lastBlock-1].hash);
         }
         bool check(){
             for (int i=1; i<=lastBlock; i++){
-                if (block[i].thisHash != block[i].hash()){
+                if (block[i].hash != block[i].hashFunc()){
                     return false;
                 }
-                else if (block[i].prevHash != block[i-1].thisHash){
+                else if (block[i].prevHash != block[i-1].hash){
                     return false;
                 }
             }
