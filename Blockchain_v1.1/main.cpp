@@ -20,32 +20,39 @@
 */
 
 #include <iostream>
-#include "miner.cpp"
-
+#include "sha256.h"
+#include "block.h"
+#include "user.h"
+#include "miner.h"
+#include <thread>
+#include <mutex>
 using namespace std;
+mutex mtx;
 
-int main(int argc, char *argv[])
+int main()
 {
-    User user1;
-    Miner miner1;
-    miner1.start(&user1);
+    int difficulty = 5;
+    Miner miner;
+    User user;
+    miner.start(&user, &mtx, difficulty);
+    user.start(difficulty);
     string input;
     while(true){
          cin >> input;
          if (input=="showData"){
-            user1.showData();
+            user.showData();
          }
          else if (input=="showChain"){
-            user1.showChain();
+            user.showChain();
          }
          else if (input=="check"){
-            if (user1.check())
+            if (user.check())
                 cout << "Blockchain is valid" << endl;
             else
                 cout << "Blockchain is corrupted" << endl;
             }
          else{
-            miner1.addData(input);
+            miner.addData(input);
          }
     }
     return 0;
