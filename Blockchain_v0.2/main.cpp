@@ -48,7 +48,7 @@ class Block {
 class Blockchain {
     public:
         int lastBlock;
-        Block block[10000];
+        Block block[100];
         Blockchain(){
             block[0].setContent(0,"This is the first block", "0");
             lastBlock=0;
