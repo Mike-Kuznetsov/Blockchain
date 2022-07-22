@@ -13,15 +13,10 @@ void User::start(int setDifficulty){
     zeros=zeros.substr(0, difficulty);
 }
 void User::setBlock(Block receivedBlock){
-    //cout << zeros << endl;
-    //cout << receivedBlock.hashFunc().substr(0, difficulty) << endl;
-    //if (receivedBlock.hashFunc().substr(0, difficulty)==zeros) cout << "true" << endl;
     if ((receivedBlock.hashFunc().substr(0, difficulty)==zeros) && (receivedBlock.number==block[lastBlock].number+1) && (receivedBlock.prevHash==block[lastBlock].hash)){
         lastBlock++;
         block[lastBlock]=receivedBlock;
     }
-    //lastBlock++;
-    //block[lastBlock].createBlock(lastBlock, block[lastBlock-1].hash);
 }
 bool User::check(){
     for (int i=1; i<=lastBlock; i++){
