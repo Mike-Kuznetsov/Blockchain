@@ -12,12 +12,14 @@ void User::start(int setDifficulty){
     zeros="000000000000000000000000000000";
     zeros=zeros.substr(0, difficulty);
 }
+
 void User::setBlock(Block receivedBlock){
     if ((receivedBlock.hashFunc().substr(0, difficulty)==zeros) && (receivedBlock.number==block[lastBlock].number+1) && (receivedBlock.prevHash==block[lastBlock].hash)){
         lastBlock++;
         block[lastBlock]=receivedBlock;
     }
 }
+
 bool User::check(){
     for (int i=1; i<=lastBlock; i++){
         if (block[i].hash != block[i].hashFunc()){
@@ -29,6 +31,7 @@ bool User::check(){
     }
     return true;
 }
+
 void User::showChain(){
     for (int i=0; i<=lastBlock; i++){
         cout << "Block: " << i << endl;
@@ -36,6 +39,7 @@ void User::showChain(){
         cout <<  block[i].hash << endl;
     }
 }
+
 void User::showData(){
     for (int i=0; i<=lastBlock; i++){
         cout << "Block: " << i << endl;
