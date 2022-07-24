@@ -26,7 +26,7 @@ void Block::addTransaction(Transaction transaction){
 string Block::hashFunc(){
     string sum="";
     for (int j=0;j<i;j++){
-        sum=sum+transactions[i].hashFunc();
+        sum=sum+transactions[j].hashFunc();
     }
     return sha256(to_string(number) + sum + prevHash + to_string(nonce));
 }
