@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Blockchain" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Blockchain" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/include" />
+				</Compiler>
+				<Linker>
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/capi.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/dasync.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/ec_internal_test.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/libapps.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/libcrypto.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/libcrypto_static.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/libssl.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/libssl_static.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/libtestutil.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/openssl.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/ossltest.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/padlock.lib" />
+					<Add library="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/lib/uitest.lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Blockchain" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="../../../../../Program Files/CodeBlocks/MinGW/lib/OpenSSL-Win64/include" />
+		</Compiler>
+		<Unit filename="block.cpp" />
+		<Unit filename="block.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="miner.cpp" />
+		<Unit filename="miner.h" />
+		<Unit filename="sha256.cpp" />
+		<Unit filename="sha256.h" />
+		<Unit filename="signature.cpp" />
+		<Unit filename="signature.h" />
+		<Unit filename="transaction.cpp" />
+		<Unit filename="transaction.h" />
+		<Unit filename="user.cpp" />
+		<Unit filename="user.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
