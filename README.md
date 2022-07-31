@@ -1,4 +1,4 @@
-#Mautoz Tech Cryptocurrency
+# Mautoz Tech Cryptocurrency
 
 Simple blockchain program for you to learn the blockchain technology.
 
